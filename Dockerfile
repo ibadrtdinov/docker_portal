@@ -1,4 +1,4 @@
-FROM ibadrtdinov/tomcat_https
+FROM msdjl/tomcat_https
 ENV PORTAL_DB="10.36.6.50/sv"
 ENV JENKINS_ARTIFACT_URL="http://10.36.6.49:9090/view/Trunk/job/portal_trunk/lastSuccessfulBuild/artifact/portal/dist/employee-portal.war"
 ENV BLOCK_EM7="false"
