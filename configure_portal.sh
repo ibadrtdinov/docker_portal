@@ -14,6 +14,11 @@ DB_URL="jdbc:postgresql://${PORTAL_DB}"
 sed -i s#^jdbc.mmdb.url=.*#jdbc.mmdb.url=${DB_URL}#g ${CATALINA_HOME}/webapps/portal/WEB-INF/env.properties
 sed -i s#^jdbc.rt.url=.*#jdbc.rt.url=${DB_URL}#g ${CATALINA_HOME}/webapps/portal/WEB-INF/env.properties
 
+# openAm fork
+if [ ${OPEN_AM} = "true" ]; then
+sed -i s#^openam.home.url=.*#openam.home.url=${OPENAM_HOME_URL}#g WEB-INF/env.properties
+fi
+
 # block em7
 if [ ${BLOCK_EM7} = "true" ]; then
 sed -i s#^em7.server.url=.*#em7.server.url=https\\\\://127.0.0.1# ${CATALINA_HOME}/webapps/portal/WEB-INF/env.properties
